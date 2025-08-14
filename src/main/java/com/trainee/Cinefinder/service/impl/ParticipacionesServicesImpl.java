@@ -31,9 +31,9 @@ public class ParticipacionesServicesImpl implements ParticipacionesServices {
     }
 
     @Override
-    public Optional<ParticipacionesDto> getParticipacionesPorTipo(String tipo_evento) {
-        Participaciones participacion = participacionesRepositorio.findByTipo(tipo_evento)
-                .orElseThrow(() -> new RecursoNoEncontradoException("Participacion con el tipo de eveneto: " + tipo_evento + " no se encuentra."));
+    public Optional<ParticipacionesDto> getParticipacionesPorTipo(String tipoEvento) {
+        Participaciones participacion = participacionesRepositorio.findByTipoEvento(tipoEvento)
+                .orElseThrow(() -> new RecursoNoEncontradoException("Participacion con el tipo de eveneto: " + tipoEvento + " no se encuentra."));
         return Optional.of(ParticipacionesMapper.participacionesToDto(participacion));
     }
 
@@ -53,7 +53,7 @@ public class ParticipacionesServicesImpl implements ParticipacionesServices {
             Artistas artista = artistasRespositorio.findById(dto.artistas_dni())
                     .orElseThrow(() -> new RecursoNoEncontradoException("Artista con dni: " + dto.artistas_dni() + " no encontrada"));
 
-            participacion.setTipo_evento(dto.tipo_evento());
+            participacion.setTipoEvento(dto.tipo_evento());
             participacion.setEvento_id(dto.evento_id());
             participacion.setArtista_dni(artista.getDni());
             return ParticipacionesMapper.participacionesToDto(participacion);

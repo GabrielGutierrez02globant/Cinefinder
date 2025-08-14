@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface ParticipacionRepository extends JpaRepository<Participaciones, Long> {
-    @Query("SELECT p FROM participaciones p WHERE p.tipo_eveneto like :tipo_evento")
-    Optional<Participaciones> findByTipo (String tipo_evento);
+    @Query("SELECT p FROM Participaciones p WHERE p.tipoEvento like :tipoEvento")
+    Optional<Participaciones> findByTipoEvento (String tipoEvento);
 }

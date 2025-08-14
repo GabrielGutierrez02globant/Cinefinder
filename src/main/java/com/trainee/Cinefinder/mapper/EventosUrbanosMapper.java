@@ -1,6 +1,7 @@
 package com.trainee.Cinefinder.mapper;
 
 import com.trainee.Cinefinder.model.Categorias;
+import com.trainee.Cinefinder.model.Categorias;
 import com.trainee.Cinefinder.model.EventosUrbanos;
 import com.trainee.Cinefinder.model.dto.EventosUrbanosDto;
 import org.springframework.stereotype.Component;

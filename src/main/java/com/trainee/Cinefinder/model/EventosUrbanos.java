@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
+@Entity (name = "EventosUrbanos")
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
-@Table (name = "EventosUrbanos")
+@Table (name = "eventos_urbanos")
 public class EventosUrbanos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

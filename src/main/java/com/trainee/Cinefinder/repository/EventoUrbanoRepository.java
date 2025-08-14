@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface EventoUrbanoRepository extends JpaRepository<EventosUrbanos, Integer> {
-    @Query("SELECT eu FROM Eventos_Urbanos eu WHERE eu.titulo = :titulo")
+    @Query("SELECT e FROM EventosUrbanos e WHERE e.titulo = :titulo")
     Optional<EventosUrbanos> findByTitulo (String titulo);
 }

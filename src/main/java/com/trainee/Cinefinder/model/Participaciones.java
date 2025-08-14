@@ -7,7 +7,7 @@ import lombok.*;
 import org.jetbrains.annotations.NotNull;
 
 @Data
-@Entity
+@Entity (name = "Participaciones")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,7 +23,7 @@ public class Participaciones {
     @Valid
     private Long artista_dni;
     @Column (name = "tipo_evento")
-    private String tipo_evento;
+    private String tipoEvento;
     @Column (name = "evento_id")
     private Integer evento_id;
 }

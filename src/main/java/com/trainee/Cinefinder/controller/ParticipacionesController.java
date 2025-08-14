@@ -22,8 +22,8 @@ public class ParticipacionesController {
   }
 
   @GetMapping("/{tipo_evento}")
-  public Optional<ParticipacionesDto> findParticipacionByTipo(@PathVariable String tipo_evento){
-    return participacionesServices.getParticipacionesPorTipo(tipo_evento);
+  public Optional<ParticipacionesDto> findParticipacionByTipo(@PathVariable String tipoEvento){
+    return participacionesServices.getParticipacionesPorTipo(tipoEvento);
   }
 
   @PostMapping()
