@@ -67,6 +67,10 @@ public class ArtistasServicesImpl implements ArtistasServices {
 
     @Override
     public Void eliminarArtista(Long dni) {
+        if (!artistasRepositorio.existsById(dni)){
+            throw new RecursoNoEncontradoException("Artista no encontrado con el DNI: " + dni);
+        }
+        artistasRepositorio.deleteById(dni);
         return null;
     }
 }
